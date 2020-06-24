@@ -12,7 +12,7 @@ function escapeRegex(text) {
 };
 
 //INDEX - show all campgrounds
-router.get("/", function(req, res){
+router.get("*", function(req, res){
   if(req.query.search && req.xhr) {
       const regex = new RegExp(escapeRegex(req.query.search), 'gi');
       // Get all campgrounds from DB
@@ -40,7 +40,7 @@ router.get("/", function(req, res){
 });
 
 //CREATE - add new campground to DB
-router.post("/", isLoggedIn, isSafe, function(req, res){
+router.post("*", isLoggedIn, isSafe, function(req, res){
   // get data from form and add to campgrounds array
   var name = req.body.name;
   var image = req.body.image;
