@@ -25,7 +25,7 @@ mongoose.Promise = global.Promise;
 
 // const databaseUri = process.env.MONGODB_URI || 'mongodb://localhost/yelp_camp_v12';
 
-mongoose.connect("mongodb+srv://yelpcamp-ztw7y.mongodb.net/YelpCamp")
+mongoose.connect("mongodb://yelpcamp-shard-00-00-ztw7y.mongodb.net:27017")
       .then(() => console.log(`Database connected`))
       .catch(err => console.log(`Database connection error: ${err.message}`));
 
