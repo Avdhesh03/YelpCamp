@@ -23,9 +23,9 @@ var commentRoutes    = require("./routes/comments"),
 // assign mongoose promise library and connect to database
 mongoose.Promise = global.Promise;
 
-// const databaseUri = process.env.MONGODB_URI || 'mongodb://localhost/yelp_camp_v12';
+const databaseUri = process.env.MONGODB_URI || 'mongodb://localhost/yelp_camp_v12';
 
- mongoose.connect(mongodb+srv://Avdhesh:03111999@yelpcamp-ztw7y.mongodb.net/YelpCamp?retryWrites=true&w=majority);
+//  mongoose.connect(mongodb+srv://Avdhesh:03111999@yelpcamp-ztw7y.mongodb.net/YelpCamp?retryWrites=true&w=majority);
 //       .then(() => console.log(`Database connected`))
 //       .catch(err => console.log(`Database connection error: ${err.message}`));
 
