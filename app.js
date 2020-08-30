@@ -25,7 +25,7 @@ mongoose.Promise = global.Promise;
 MONGOBD_URI="mongodb+srv://Avdhesh:03111999@cluster0-auuoe.mongodb.net/Cluster0?retryWrites=true&w=majority";
 const databaseUri = process.env.MONGODB_URI || 'mongodb://localhost/yelp_camp_v12';
 
-mongoose.connect(databaseUri);
+mongoose.connect(databaseUri)
 .then(() => console.log(`Database connected`))
 .catch(err => console.log(`Database connection error: ${err.message}`));
 
