@@ -46,7 +46,7 @@ router.post("/", isLoggedIn, function(req, res){
    });
 });
 
-router.get("/:commentId/edit", isLoggedIn, checkUserComment, function(req, res){
+router.get("/:commentId/edit", isLoggedIn,isAdmin, checkUserComment, function(req, res){
   res.render("comments/edit", {campground_id: req.params.id, comment: req.comment});
 });
 
@@ -61,7 +61,7 @@ router.put("/:commentId", isAdmin, function(req, res){
    }); 
 });
 
-router.delete("/:commentId", isLoggedIn, checkUserComment, function(req, res){
+router.delete("/:commentId", isLoggedIn,isAdmin ,checkUserComment, function(req, res){
   // find campground, remove comment from comments array, delete comment in db
   Campground.findByIdAndUpdate(req.params.id, {
     $pull: {
